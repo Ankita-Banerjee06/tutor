@@ -17,7 +17,7 @@ const AdminDashboard = () => {
     const fetchDashboard = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('http://localhost:8000/api/admin/dashboard', {
+        const res = await fetch('/api/admin/dashboard', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (res.ok) {

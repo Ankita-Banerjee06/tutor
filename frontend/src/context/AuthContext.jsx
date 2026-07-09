@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     // Check if user is logged in
     const storedUser = localStorage.getItem('user');
     const token = localStorage.getItem('token');
-    
+
     if (storedUser && token) {
       setUser(JSON.parse(storedUser));
     }
@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
       formData.append('username', email);
       formData.append('password', password);
 
-      const response = await fetch('http://localhost:8000/api/auth/login', {
+      const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: formData,
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const response = await fetch('http://localhost:8000/api/auth/register', {
+      const response = await fetch('http://127.0.0.1:8000/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
