@@ -68,6 +68,14 @@ const AdminDashboard = () => {
           <h4 style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>Total Inquiries</h4>
           <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--success)' }}>{stats.total_inquiries || 0}</p>
         </div>
+        <div className="glass-card" style={{ textAlign: 'center' }}>
+          <h4 style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>Total Courses</h4>
+          <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#10b981' }}>{stats.total_courses || 0}</p>
+        </div>
+        <div className="glass-card" style={{ textAlign: 'center' }}>
+          <h4 style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>Total Enrollments</h4>
+          <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#ec4899' }}>{stats.total_enrollments || 0}</p>
+        </div>
       </div>
 
       {/* Recent Users Table */}

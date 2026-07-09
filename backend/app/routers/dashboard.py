@@ -39,6 +39,13 @@ def student_dashboard(
                 "title": r.title,
                 "subject": r.subject
             } for r in resources
+        ],
+        "purchased_courses": [
+            {
+                "id": e.course.id,
+                "title": e.course.title,
+                "purchased_at": str(e.purchased_at)
+            } for e in current_user.enrollments
         ]
     }
 
@@ -54,6 +61,8 @@ def admin_dashboard(
         models.Booking.status == models.BookingStatus.PENDING
     ).count()
     total_inquiries = db.query(models.Inquiry).count()
+    total_courses = db.query(models.Course).count()
+    total_enrollments = db.query(models.Enrollment).count()
 
     recent_users = db.query(models.User).order_by(
         models.User.created_at.desc()
@@ -65,7 +74,9 @@ def admin_dashboard(
             "total_students": total_students,
             "total_tutors": total_tutors,
             "pending_bookings": pending_bookings,
-            "total_inquiries": total_inquiries
+            "total_inquiries": total_inquiries,
+            "total_courses": total_courses,
+            "total_enrollments": total_enrollments
         },
         "recent_users": [
             {

@@ -43,6 +43,7 @@ const StudentDashboard = () => {
 
   const upcomingSessions = data?.upcoming_sessions || [];
   const recentResources = data?.recent_resources || [];
+  const purchasedCourses = data?.purchased_courses || [];
 
   return (
     <DashboardLayout role="Student" links={links}>
@@ -81,6 +82,26 @@ const StudentDashboard = () => {
                 </li>
               ))}
             </ul>
+          )}
+        </div>
+
+        {/* Widget 2.5: Purchased Courses */}
+        <div className="glass-card" style={{ gridColumn: '1 / -1' }}>
+          <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>🎓 Purchased Courses</h3>
+          {purchasedCourses.length === 0 ? (
+            <p style={{ color: 'var(--text-secondary)' }}>You haven't purchased any courses yet. <a href="/courses" style={{ color: 'var(--accent-blue)' }}>Browse our courses.</a></p>
+          ) : (
+            <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+              {purchasedCourses.map((course, i) => (
+                <div key={i} style={{ padding: '1rem', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', background: 'rgba(255,255,255,0.02)' }}>
+                  <h4 style={{ marginBottom: '0.5rem' }}>{course.title}</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '1rem' }}>
+                    Purchased on: {new Date(course.purchased_at).toLocaleDateString()}
+                  </p>
+                  <button className="btn-secondary" style={{ width: '100%' }}>Go to Course</button>
+                </div>
+              ))}
+            </div>
           )}
         </div>
 

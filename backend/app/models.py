@@ -34,6 +34,7 @@ class User(Base):
     profile = relationship("Profile", back_populates="user", uselist=False)
     bookings_as_student = relationship("Booking", foreign_keys="[Booking.student_id]", back_populates="student")
     bookings_as_tutor = relationship("Booking", foreign_keys="[Booking.tutor_id]", back_populates="tutor")
+    enrollments = relationship("Enrollment", back_populates="student")
 
 class Profile(Base):
     __tablename__ = "profiles"
@@ -127,3 +128,25 @@ class Inquiry(Base):
     preferred_time = Column(String)
     message = Column(String)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+class Course(Base):
+    __tablename__ = "courses"
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, index=True)
+    description = Column(Text, nullable=True)
+    price = Column(Float, default=0.0)
+    instructor_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    enrollments = relationship("Enrollment", back_populates="course")
+    instructor = relationship("User", foreign_keys=[instructor_id])
+
+class Enrollment(Base):
+    __tablename__ = "enrollments"
+    id = Column(Integer, primary_key=True, index=True)
+    student_id = Column(Integer, ForeignKey("users.id"))
+    course_id = Column(Integer, ForeignKey("courses.id"))
+    purchased_at = Column(DateTime, default=datetime.utcnow)
+
+    student = relationship("User", back_populates="enrollments")
+    course = relationship("Course", back_populates="enrollments")
