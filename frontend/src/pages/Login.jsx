@@ -25,11 +25,11 @@ const Login = () => {
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label className="form-label">Email</label>
-              <input type="email" className="form-input" required value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input type="email" className="form-input" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
             </div>
             <div className="form-group">
               <label className="form-label">Password</label>
-              <input type="password" className="form-input" required value={password} onChange={(e) => setPassword(e.target.value)} />
+              <input type="password" className="form-input" required value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" />
             </div>
             {error && <p style={{ color: 'var(--error)', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</p>}
             <button type="submit" className="btn-primary" style={{ width: '100%', marginBottom: '1rem' }}>Login</button>

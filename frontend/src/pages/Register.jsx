@@ -28,15 +28,15 @@ const Register = () => {
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label className="form-label">Full Name</label>
-              <input type="text" name="full_name" className="form-input" required value={formData.full_name} onChange={handleChange} />
+              <input type="text" name="full_name" className="form-input" required value={formData.full_name} onChange={handleChange} autoComplete="name" />
             </div>
             <div className="form-group">
               <label className="form-label">Email</label>
-              <input type="email" name="email" className="form-input" required value={formData.email} onChange={handleChange} />
+              <input type="email" name="email" className="form-input" required value={formData.email} onChange={handleChange} autoComplete="email" />
             </div>
             <div className="form-group">
               <label className="form-label">Password</label>
-              <input type="password" name="password" className="form-input" required minLength="6" value={formData.password} onChange={handleChange} />
+              <input type="password" name="password" className="form-input" required minLength="6" value={formData.password} onChange={handleChange} autoComplete="new-password" />
             </div>
             <div className="form-group">
               <label className="form-label">I am a...</label>
