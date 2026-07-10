@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://tutor-o6y5.onrender.com"
+      "destination": "https://tutor-o6y5.onrender.com/api/$1"
     },
     {
       "source": "/(.*)",
