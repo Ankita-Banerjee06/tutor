@@ -1,9 +1,11 @@
 .navbar-glass {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  background: var(--canvas);
+  width: 100%;
+  background-color: var(--canvas);
   border-bottom: 1px solid var(--hairline);
+  z-index: 1000;
+  backdrop-filter: none;
   height: 64px;
   display: flex;
   align-items: center;
@@ -13,21 +15,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  height: 100%;
 }
 
 .brand {
   font-family: var(--font-display);
-  font-size: 20px;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  font-size: 20px;
   color: var(--ink);
+  letter-spacing: -0.5px;
 }
 
 .nav-links {
   display: flex;
+  gap: var(--spacing-lg);
   align-items: center;
-  gap: 1.5rem;
 }
 
 .nav-link {
@@ -40,4 +42,10 @@
 
 .nav-link:hover, .nav-link.active {
   color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 }

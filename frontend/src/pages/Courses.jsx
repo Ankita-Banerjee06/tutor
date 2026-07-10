@@ -102,7 +102,7 @@ const Courses = () => {
           email: data.user.email,
         },
         theme: {
-          color: "#38bdf8"
+          color: "#faff69"
         }
       };
 
@@ -119,7 +119,7 @@ const Courses = () => {
     <div className="section animate-fade-in" style={{ minHeight: '80vh', paddingTop: '96px', backgroundColor: 'var(--canvas)' }}>
       <div className="container">
         <h1 className="text-center display-md" style={{ marginBottom: '16px' }}>Our Courses</h1>
-        <p className="text-center" style={{ color: 'var(--muted)', marginBottom: '48px', maxWidth: '600px', margin: '0 auto 48px' }}>
+        <p className="text-center" style={{ color: 'var(--body)', marginBottom: '48px', maxWidth: '600px', margin: '0 auto 48px' }}>
           Explore our expert-led IB DP courses designed to help you achieve top marks.
         </p>
         
@@ -129,8 +129,8 @@ const Courses = () => {
           <p className="text-center" style={{ color: 'var(--muted)' }}>No courses available right now. Check back later!</p>
         ) : (
           <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
-            {courses.map(course => (
-              <div key={course.id} className="feature-card" style={{ display: 'flex', flexDirection: 'column' }}>
+            {courses.map((course, i) => (
+              <div key={course.id} className="feature-card animate-slide-up" style={{ display: 'flex', flexDirection: 'column', animationDelay: `${i * 100}ms` }}>
                 <h3 className="title-md" style={{ marginBottom: '8px' }}>{course.title}</h3>
                 <p style={{ color: 'var(--muted)', marginBottom: '24px', flexGrow: 1 }}>{course.description}</p>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

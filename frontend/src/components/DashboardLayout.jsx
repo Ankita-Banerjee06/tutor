@@ -23,8 +23,8 @@ const DashboardLayout = ({ children, role, links }) => {
               style={{
                 padding: '0.6rem 1rem',
                 borderRadius: 'var(--rounded-md)',
-                color: location.pathname === link.path ? 'var(--ink)' : 'var(--muted)',
-                backgroundColor: location.pathname === link.path ? 'var(--surface-strong)' : 'transparent',
+                color: location.pathname === link.path ? 'var(--on-primary)' : 'var(--muted)',
+                backgroundColor: location.pathname === link.path ? 'var(--primary)' : 'transparent',
                 fontWeight: location.pathname === link.path ? '600' : '500',
                 transition: 'all 0.2s ease',
                 textDecoration: 'none',

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Calendar, CheckCircle } from 'lucide-react';
 
 const SUBJECT_OPTIONS = [
   "Mathematics AA/AI HL/SL", "Physics", "Chemistry", 
@@ -96,8 +97,8 @@ const Contact = () => {
               <p>Online Worldwide</p>
             </div>
             
-            <div className="badge-pill" style={{ marginTop: '32px', backgroundColor: 'rgba(16, 185, 129, 0.1)', color: 'var(--success)' }}>
-              🎯 Free 30-Minute Consultation
+            <div className="badge-pill" style={{ marginTop: '32px', backgroundColor: 'var(--surface-elevated)', color: 'var(--primary)' }}>
+              <CheckCircle size={16} style={{ marginRight: '8px' }} /> Free 30-Minute Consultation
             </div>
           </div>
 
@@ -200,7 +201,7 @@ const Contact = () => {
               <button type="submit" className="btn-primary" style={{ width: '100%', marginTop: '1rem' }} disabled={status === 'submitting'}>
                 {status === 'submitting' ? 'Submitting...' : (
                   <>
-                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '8px' }}><path d="M12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm436-44v-36c0-26.5-21.5-48-48-48h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v36c0 6.6 5.4 12 12 12h424c6.6 0 12-5.4 12-12z"></path></svg>
+                    <Calendar size={18} style={{ marginRight: '8px' }} />
                     Book a Free Consultation
                   </>
                 )}
