@@ -81,7 +81,7 @@ class ResourceCreate(BaseModel):
     title: str
     description: Optional[str] = None
     file_path: str
-    subject: str
+    course_id: int
 
 class ResourceResponse(ResourceCreate):
     id: int
@@ -105,3 +105,25 @@ class BlogPostResponse(BlogPostCreate):
 
     class Config:
         from_attributes = True
+
+# Course Schemas
+class CourseCreate(BaseModel):
+    title: str
+    description: Optional[str] = None
+    price: float = 0.0
+
+class CourseResponse(CourseCreate):
+    id: int
+    instructor_id: Optional[int] = None
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# Chat Schemas
+class ChatRequest(BaseModel):
+    message: str
+    history: Optional[List[dict]] = []
+
+class ChatResponse(BaseModel):
+    reply: str

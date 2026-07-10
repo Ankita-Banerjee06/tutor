@@ -6,7 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
 from sqlalchemy.orm import Session
 from app.database import engine, Base, get_db
-from app.routers import auth, dashboard
+from app.routers import auth, dashboard, courses, resources, ai_chat
+from fastapi.staticfiles import StaticFiles
 from app.schemas import InquiryCreate
 from app.models import Inquiry
 
@@ -24,7 +25,7 @@ async def global_exception_handler(request: Request, exc: Exception):
     logger.error(f"Global Exception: {exc}", exc_info=True)
     return JSONResponse(
         status_code=500,
-        content={"message": "An unexpected error occurred. Please try again later."},
+        content={"message": "An unexpected error occurred. Please try again later.", "detail": str(exc)},
     )
 
 @app.exception_handler(RequestValidationError)
@@ -37,7 +38,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5175", "http://127.0.0.1:5175", "http://localhost:5174", "http://127.0.0.1:5174"], 
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -45,6 +46,12 @@ app.add_middleware(
 
 app.include_router(auth.router, prefix="/api/auth", tags=["Authentication"])
 app.include_router(dashboard.router, prefix="/api", tags=["Dashboard"])
+app.include_router(courses.router, prefix="/api", tags=["Courses"])
+app.include_router(resources.router, prefix="/api", tags=["Resources"])
+app.include_router(ai_chat.router, prefix="/api", tags=["AI Chat"])
+
+# Serve static files for uploads
+app.mount("/api/uploads", StaticFiles(directory="uploads"), name="uploads")
 
 def send_email_notification(inquiry: InquiryCreate):
     print(f"--- EMAIL NOTIFICATION ---")

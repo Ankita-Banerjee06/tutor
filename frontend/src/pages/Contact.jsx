@@ -67,17 +67,17 @@ const Contact = () => {
   return (
     <div className="contact-page animate-fade-in section">
       <div className="container" style={{ maxWidth: '1100px' }}>
-        <div className="text-center" style={{ marginBottom: '3rem' }}>
-          <h1 className="text-gradient">Book a Free Consultation</h1>
-          <p style={{ color: 'var(--text-secondary)', marginTop: '1rem', maxWidth: '650px', margin: '1rem auto' }}>
+        <div className="text-center" style={{ marginBottom: '48px' }}>
+          <h1 className="display-md">Book a Free Consultation</h1>
+          <p style={{ color: 'var(--muted)', marginTop: '16px', maxWidth: '650px', margin: '16px auto' }}>
             Need help achieving a 6 or 7 in IB? Fill out the form below, and we'll contact you within 24 hours with a personalized learning plan.
           </p>
         </div>
 
         <div className="contact-grid">
           {/* Info Panel */}
-          <div className="glass-panel info-panel">
-            <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Contact Information</h3>
+          <div className="feature-card info-panel">
+            <h3 className="title-md" style={{ marginBottom: '24px' }}>Contact Information</h3>
             
             <div className="info-item">
               <strong>Email</strong>
@@ -96,13 +96,13 @@ const Contact = () => {
               <p>Online Worldwide</p>
             </div>
             
-            <div className="badge animate-pulse" style={{ marginTop: '2rem' }}>
+            <div className="badge-pill" style={{ marginTop: '32px', backgroundColor: 'rgba(16, 185, 129, 0.1)', color: 'var(--success)' }}>
               🎯 Free 30-Minute Consultation
             </div>
           </div>
 
           {/* Form */}
-          <div className="glass-card">
+          <div className="feature-card">
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-row">
                 <div className="form-group" style={{ flex: 1 }}>

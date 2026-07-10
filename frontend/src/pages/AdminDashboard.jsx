@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { LayoutDashboard, Calendar, BookOpen, Bot, Crown, Folder, Users, Settings, GraduationCap } from 'lucide-react';
 import DashboardLayout from '../components/DashboardLayout';
 
 const AdminDashboard = () => {
@@ -7,10 +8,11 @@ const AdminDashboard = () => {
 
   const links = [
     { path: '/admin', label: 'Overview', icon: '📈' },
-    { path: '/admin/users', label: 'Manage Users', icon: '👥' },
-    { path: '/admin/bookings', label: 'All Bookings', icon: '📅' },
-    { path: '/admin/resources', label: 'Resource Library', icon: '📁' },
-    { path: '/admin/settings', label: 'Settings', icon: '⚙️' },
+    { path: '/admin/courses', label: 'Manage Courses', icon: <GraduationCap size={18} /> },
+    { path: '/admin/users', label: 'Manage Users', icon: <Users size={18} /> },
+    { path: '/admin/bookings', label: 'All Bookings', icon: <Calendar size={18} /> },
+    { path: '/admin/resources', label: 'Resource Library', icon: <Folder size={18} /> },
+    { path: '/admin/settings', label: 'Settings', icon: <Settings size={18} /> },
   ];
 
   useEffect(() => {

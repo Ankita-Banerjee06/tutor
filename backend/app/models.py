@@ -83,7 +83,7 @@ class Resource(Base):
     title = Column(String, index=True)
     description = Column(Text, nullable=True)
     file_path = Column(String) # local storage path
-    subject = Column(String)
+    course_id = Column(Integer, ForeignKey("courses.id"), nullable=True) # Linked course
     uploaded_by = Column(Integer, ForeignKey("users.id"))
     created_at = Column(DateTime, default=datetime.utcnow)
 

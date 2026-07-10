@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { LayoutDashboard, Calendar, BookOpen, Bot, Crown, Folder, Users, Settings, GraduationCap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import DashboardLayout from '../components/DashboardLayout';
 
 const StudentDashboard = () => {
@@ -6,10 +8,10 @@ const StudentDashboard = () => {
   const [loading, setLoading] = useState(true);
 
   const links = [
-    { path: '/student', label: 'Overview', icon: '📊' },
-    { path: '/student/sessions', label: 'My Sessions', icon: '📅' },
-    { path: '/student/resources', label: 'Study Materials', icon: '📚' },
-    { path: '/student/ai-tutor', label: 'AI Tutor', icon: '🤖' },
+    { path: '/student', label: 'Overview', icon: <LayoutDashboard size={18} /> },
+    { path: '/student/sessions', label: 'My Sessions', icon: <Calendar size={18} /> },
+    { path: '/student/resources', label: 'Study Materials', icon: <BookOpen size={18} /> },
+    { path: '/student/ai-tutor', label: 'AI Tutor', icon: <Bot size={18} /> },
   ];
 
   useEffect(() => {
@@ -53,7 +55,7 @@ const StudentDashboard = () => {
       <div className="grid grid-2" style={{ gap: '2rem' }}>
         {/* Widget 1: Upcoming Sessions */}
         <div className="glass-card">
-          <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>📅 Upcoming Sessions</h3>
+          <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}><Calendar size={20} className="inline mr-2" /> Upcoming Sessions</h3>
           {upcomingSessions.length === 0 ? (
             <p style={{ color: 'var(--text-secondary)' }}>No upcoming sessions booked. <a href="/contact" style={{ color: 'var(--accent-blue)' }}>Book one now.</a></p>
           ) : (
@@ -70,7 +72,7 @@ const StudentDashboard = () => {
 
         {/* Widget 2: Recent Materials */}
         <div className="glass-card">
-          <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>📚 Recent Materials</h3>
+          <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}><BookOpen size={20} className="inline mr-2" /> Recent Materials</h3>
           {recentResources.length === 0 ? (
             <p style={{ color: 'var(--text-secondary)' }}>No materials uploaded yet. Check back soon!</p>
           ) : (
@@ -87,7 +89,7 @@ const StudentDashboard = () => {
 
         {/* Widget 2.5: Purchased Courses */}
         <div className="glass-card" style={{ gridColumn: '1 / -1' }}>
-          <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>🎓 Purchased Courses</h3>
+          <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}><GraduationCap size={20} className="inline mr-2" /> Purchased Courses</h3>
           {purchasedCourses.length === 0 ? (
             <p style={{ color: 'var(--text-secondary)' }}>You haven't purchased any courses yet. <a href="/courses" style={{ color: 'var(--accent-blue)' }}>Browse our courses.</a></p>
           ) : (
@@ -98,7 +100,9 @@ const StudentDashboard = () => {
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '1rem' }}>
                     Purchased on: {new Date(course.purchased_at).toLocaleDateString()}
                   </p>
-                  <button className="btn-secondary" style={{ width: '100%' }}>Go to Course</button>
+                  <Link to="/student/resources">
+                    <button className="btn-secondary" style={{ width: '100%' }}>Go to Course</button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -109,10 +113,12 @@ const StudentDashboard = () => {
         <div className="glass-card" style={{ gridColumn: '1 / -1', background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)', border: '1px solid var(--accent-purple)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <h3 style={{ color: 'var(--accent-purple)', marginBottom: '0.5rem' }}>🤖 Need help with homework?</h3>
+              <h3 style={{ color: 'var(--accent-purple)', marginBottom: '0.5rem' }}><Bot size={20} className="inline mr-2" /> Need help with homework?</h3>
               <p style={{ color: 'var(--text-secondary)' }}>Ask the AI Tutor questions based strictly on your IB syllabus.</p>
             </div>
-            <button className="btn-primary" style={{ padding: '0.75rem 2rem' }}>Chat with AI</button>
+            <Link to="/student/ai-tutor">
+              <button className="btn-primary" style={{ padding: '0.75rem 2rem' }}>Chat with AI</button>
+            </Link>
           </div>
         </div>
       </div>

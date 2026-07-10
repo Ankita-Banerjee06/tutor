@@ -20,11 +20,11 @@ const Navbar = () => {
     <header className="navbar-glass">
       <div className="container nav-container">
         <Link to="/" className="brand">
-          <span className="brand-text text-gradient">IB Excellence</span>
+          IB Excellence
         </Link>
         <nav className="nav-links">
           <Link to="/" className={`nav-link ${isActive('/')}`}>Home</Link>
-          <Link to="/services" className={`nav-link ${isActive('/services')}`}>Services</Link>
+          <Link to="/courses" className={`nav-link ${isActive('/courses')}`}>Courses</Link>
           <Link to="/about" className={`nav-link ${isActive('/about')}`}>About</Link>
           {user ? (
             <>
@@ -34,7 +34,7 @@ const Navbar = () => {
           ) : (
             <>
               <Link to="/login" className={`nav-link ${isActive('/login')}`}>Login</Link>
-              <Link to="/contact" className={`btn-primary animate-pulse`}>Get Started</Link>
+              <Link to="/contact" className={`btn-primary`}>Get Started</Link>
             </>
           )}
         </nav>

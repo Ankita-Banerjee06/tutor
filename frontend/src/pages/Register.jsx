@@ -23,8 +23,8 @@ const Register = () => {
   return (
     <div className="register-page animate-fade-in section">
       <div className="container" style={{ maxWidth: '400px' }}>
-        <h1 className="text-center text-gradient" style={{ marginBottom: '2rem' }}>Join IB Excellence</h1>
-        <div className="glass-card">
+        <h1 className="text-center display-sm" style={{ marginBottom: '32px' }}>Create Account</h1>
+        <div className="feature-card">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label className="form-label">Full Name</label>
