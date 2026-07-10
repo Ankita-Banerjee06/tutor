@@ -288,6 +288,29 @@ textarea.form-input {
   min-height: 100px;
 }
 
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--body);
+  font-size: 14px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  accent-color: var(--primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
 /* Badges & Avatars */
 .badge-pill {
   background-color: var(--surface-card);
