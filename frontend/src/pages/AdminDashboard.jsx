@@ -54,27 +54,27 @@ const AdminDashboard = () => {
       
       {/* Stats Grid */}
       <div className="grid animate-fade-in" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
-        <div className="feature-card animate-slide-up delay-100" style={{ textAlign: 'center' }}>
+        <div className="feature-card animate-slide-up hover-lift delay-100" style={{ textAlign: 'center' }}>
           <h4 style={{ color: 'var(--muted)', marginBottom: '0.5rem' }}>Total Users</h4>
           <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>{stats.total_users || 0}</p>
         </div>
-        <div className="feature-card animate-slide-up delay-100" style={{ textAlign: 'center' }}>
+        <div className="feature-card animate-slide-up hover-lift delay-100" style={{ textAlign: 'center' }}>
           <h4 style={{ color: 'var(--muted)', marginBottom: '0.5rem' }}>Students</h4>
           <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>{stats.total_students || 0}</p>
         </div>
-        <div className="feature-card animate-slide-up delay-100" style={{ textAlign: 'center' }}>
+        <div className="feature-card animate-slide-up hover-lift delay-100" style={{ textAlign: 'center' }}>
           <h4 style={{ color: 'var(--muted)', marginBottom: '0.5rem' }}>Pending Bookings</h4>
           <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--warning)' }}>{stats.pending_bookings || 0}</p>
         </div>
-        <div className="feature-card animate-slide-up delay-200" style={{ textAlign: 'center' }}>
+        <div className="feature-card animate-slide-up hover-lift delay-200" style={{ textAlign: 'center' }}>
           <h4 style={{ color: 'var(--muted)', marginBottom: '0.5rem' }}>Total Inquiries</h4>
           <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--success)' }}>{stats.total_inquiries || 0}</p>
         </div>
-        <div className="feature-card animate-slide-up delay-200" style={{ textAlign: 'center' }}>
+        <div className="feature-card animate-slide-up hover-lift delay-200" style={{ textAlign: 'center' }}>
           <h4 style={{ color: 'var(--muted)', marginBottom: '0.5rem' }}>Total Courses</h4>
           <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--accent-blue)' }}>{stats.total_courses || 0}</p>
         </div>
-        <div className="feature-card animate-slide-up delay-200" style={{ textAlign: 'center' }}>
+        <div className="feature-card animate-slide-up hover-lift delay-200" style={{ textAlign: 'center' }}>
           <h4 style={{ color: 'var(--muted)', marginBottom: '0.5rem' }}>Total Enrollments</h4>
           <p style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>{stats.total_enrollments || 0}</p>
         </div>

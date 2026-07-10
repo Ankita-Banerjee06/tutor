@@ -54,7 +54,7 @@ const StudentDashboard = () => {
       
       <div className="grid grid-2 animate-fade-in" style={{ gap: '2rem' }}>
         {/* Widget 1: Upcoming Sessions */}
-        <div className="feature-card animate-slide-up delay-100">
+        <div className="feature-card animate-slide-up hover-lift delay-100">
           <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid var(--hairline)', paddingBottom: '0.5rem' }}><Calendar size={20} className="inline mr-2" /> Upcoming Sessions</h3>
           {upcomingSessions.length === 0 ? (
             <p style={{ color: 'var(--body)' }}>No upcoming sessions booked. <a href="/contact" style={{ color: 'var(--primary)' }}>Book one now.</a></p>
@@ -71,7 +71,7 @@ const StudentDashboard = () => {
         </div>
 
         {/* Widget 2: Recent Materials */}
-        <div className="feature-card animate-slide-up delay-100">
+        <div className="feature-card animate-slide-up hover-lift delay-100">
           <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid var(--hairline)', paddingBottom: '0.5rem' }}><BookOpen size={20} className="inline mr-2" /> Recent Materials</h3>
           {recentResources.length === 0 ? (
             <p style={{ color: 'var(--body)' }}>No materials uploaded yet. Check back soon!</p>
@@ -88,7 +88,7 @@ const StudentDashboard = () => {
         </div>
 
         {/* Widget 2.5: Purchased Courses */}
-        <div className="feature-card animate-slide-up delay-200" style={{ gridColumn: '1 / -1' }}>
+        <div className="feature-card animate-slide-up hover-lift delay-200" style={{ gridColumn: '1 / -1' }}>
           <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid var(--hairline)', paddingBottom: '0.5rem' }}><GraduationCap size={20} className="inline mr-2" /> Purchased Courses</h3>
           {purchasedCourses.length === 0 ? (
             <p style={{ color: 'var(--body)' }}>You haven't purchased any courses yet. <a href="/courses" style={{ color: 'var(--primary)' }}>Browse our courses.</a></p>
@@ -110,7 +110,7 @@ const StudentDashboard = () => {
         </div>
 
         {/* Widget 3: AI Tutor Promo */}
-        <div className="feature-card feature-card-yellow animate-slide-up delay-300" style={{ gridColumn: '1 / -1' }}>
+        <div className="feature-card feature-card-yellow animate-slide-up hover-lift delay-300" style={{ gridColumn: '1 / -1' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
               <h3 style={{ marginBottom: '0.5rem' }}><Bot size={20} className="inline mr-2" /> Need help with homework?</h3>

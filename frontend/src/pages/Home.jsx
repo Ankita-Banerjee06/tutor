@@ -44,10 +44,10 @@ const Home = () => {
                 Personalized tutoring, mentorship, and strategic guidance to help you achieve 40+ points and get into your dream university.
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                <Link to="/courses" className="btn-primary" style={{ padding: '14px 24px', height: '48px', fontSize: '16px' }}>
+                <Link to="/courses" className="btn-primary hover-lift animate-pulse-yellow" style={{ padding: '14px 24px', height: '48px', fontSize: '16px' }}>
                   Explore Programs
                 </Link>
-                <Link to="/contact" className="btn-secondary" style={{ padding: '14px 24px', height: '48px', fontSize: '16px' }}>
+                <Link to="/contact" className="btn-secondary hover-lift" style={{ padding: '14px 24px', height: '48px', fontSize: '16px' }}>
                   Book Free Consultation
                 </Link>
               </div>
@@ -61,7 +61,7 @@ const Home = () => {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '32px', textAlign: 'center' }}>
             {stats.map((stat, i) => (
-              <div key={i} className="animate-slide-up" style={{ animationDelay: `${i * 100}ms` }}>
+              <div key={i} className="animate-scale-in" style={{ animationDelay: `${i * 100}ms` }}>
                 <p className="stat-display" style={{ marginBottom: '8px' }}>{stat.value}</p>
                 <p style={{ color: 'var(--muted)', fontSize: '14px', fontWeight: '500' }}>{stat.label}</p>
               </div>
@@ -75,21 +75,21 @@ const Home = () => {
         <div className="container">
           <h2 className="display-lg text-center" style={{ marginBottom: '64px' }}>Why Choose Us?</h2>
           <div className="grid grid-3">
-            <div className="feature-card">
+            <div className="feature-card hover-lift">
               <div style={{ fontSize: '32px', color: 'var(--primary)', marginBottom: '24px' }}>
                 <BookOpen size={32} />
               </div>
               <h3 className="title-md" style={{ marginBottom: '12px' }}>Expert Tutors</h3>
               <p style={{ color: 'var(--body)', fontSize: '16px' }}>Learn from top scorers who have mastered the IB curriculum and know exactly what examiners are looking for.</p>
             </div>
-            <div className="feature-card">
+            <div className="feature-card hover-lift delay-100">
               <div style={{ fontSize: '32px', color: 'var(--primary)', marginBottom: '24px' }}>
                 <Target size={32} />
               </div>
               <h3 className="title-md" style={{ marginBottom: '12px' }}>Personalized Strategy</h3>
               <p style={{ color: 'var(--body)', fontSize: '16px' }}>Every student is unique. We tailor our approach to your strengths, weaknesses, and learning style.</p>
             </div>
-            <div className="feature-card">
+            <div className="feature-card hover-lift delay-200">
               <div style={{ fontSize: '32px', color: 'var(--primary)', marginBottom: '24px' }}>
                 <ShieldCheck size={32} />
               </div>
@@ -109,7 +109,7 @@ const Home = () => {
           </p>
           <div className="grid grid-3">
             {testimonials.map((t, i) => (
-              <div key={i} className="feature-card">
+              <div key={i} className="feature-card hover-lift" style={{ animationDelay: `${i * 100}ms` }}>
                 <p style={{ color: 'var(--body)', marginBottom: '24px', fontSize: '16px', lineHeight: '1.6' }}>{t.text}</p>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--hairline)', paddingTop: '16px' }}>
                   <strong style={{ fontSize: '14px', color: 'var(--ink)' }}>{t.name}</strong>
@@ -129,7 +129,7 @@ const Home = () => {
             <p style={{ color: 'var(--on-primary)', marginBottom: '32px', maxWidth: '600px', margin: '0 auto 32px', fontSize: '16px', opacity: 0.8 }}>
               Book a free consultation with our expert tutors and get a personalized study plan within 24 hours.
             </p>
-            <Link to="/contact" className="btn-primary" style={{ backgroundColor: 'var(--on-primary)', color: 'var(--primary)', padding: '14px 32px', height: '48px', fontSize: '16px' }}>
+            <Link to="/contact" className="btn-primary hover-lift animate-pulse-yellow" style={{ backgroundColor: 'var(--on-primary)', color: 'var(--primary)', padding: '14px 32px', height: '48px', fontSize: '16px' }}>
               Get Your Free Study Plan
             </Link>
           </div>

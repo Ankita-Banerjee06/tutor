@@ -130,7 +130,7 @@ const Courses = () => {
         ) : (
           <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
             {courses.map((course, i) => (
-              <div key={course.id} className="feature-card animate-slide-up" style={{ display: 'flex', flexDirection: 'column', animationDelay: `${i * 100}ms` }}>
+              <div key={course.id} className="feature-card animate-slide-up hover-lift" style={{ display: 'flex', flexDirection: 'column', animationDelay: `${i * 100}ms` }}>
                 <h3 className="title-md" style={{ marginBottom: '8px' }}>{course.title}</h3>
                 <p style={{ color: 'var(--muted)', marginBottom: '24px', flexGrow: 1 }}>{course.description}</p>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
